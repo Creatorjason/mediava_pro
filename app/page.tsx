@@ -1,54 +1,59 @@
-'use client'
+"use client";
 
-import { useState, useCallback, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faTshirt, faStore, faTruck, faChartLine, faUser, faFire } from '@fortawesome/free-solid-svg-icons'
-import Image from 'next/image'
-import { loadFull } from "tsparticles"
-import { tsParticles } from "tsparticles-engine"
-import { Fugaz_One } from 'next/font/google'
+import { useState, useCallback, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
+import { faHome, faUser, faFire } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import { loadFull } from "tsparticles";
+import { tsParticles } from "tsparticles-engine";
+import { Fugaz_One } from "next/font/google";
 
-// Load the Fugaz One font
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: "400" });
 
-interface Service {
-  title: string;
-  subservices?: string[];
-  description: string;
-  image: string;
-}
-
-const services: Service[] = [
-  {
-    title: 'Remote Edit',
-    subservices: ['Image', 'Video', 'Audio'],
-    description: 'Edit your media remotely with our professional editors, ensuring high-quality output without the need for physical meetings.',
-    image: '/remote_edit.jpg'
-  },
-  {
-    title: 'Remote Video Directing and Production',
-    description: 'Direct and produce your video projects remotely with our expert guidance, ensuring a seamless production experience from anywhere.',
-    image: '/remote_directing.jpg'
-  },
-  {
-    title: 'On-Demand Media Shooting',
-    description: 'We bring our high-quality equipment to your location to record media with professional precision and creativity.',
-    image: '/ondemand_media.jpg'
-  },
-  {
-    title: 'Content Idea Generation and Management',
-    description: 'Let our team help you brainstorm and manage your content ideas, turning your visions into actionable plans.',
-    image: '/content_idea_gen.jpg'
-  },
-  {
-    title: 'Mobile Photography and Cinematography',
-    description: 'Capture stunning images and videos with our mobile photography and cinematography services, perfect for any event.',
-    image: '/mobile_cinema.jpg'
-  }
-]
-
 export default function Component() {
-  const [activeTab, setActiveTab] = useState('home')
+  interface Service {
+    title: string;
+    subservices?: string[];
+    description: string;
+    image: string;
+  }
+  
+  const services: Service[] = [
+    {
+      title: "Remote Edit",
+      subservices: ["Image", "Video", "Audio"],
+      description:
+        "Edit your media remotely with our professional editors, ensuring high-quality output without the need for physical meetings.",
+      image: "/remote_edit.jpg",
+    },
+    {
+      title: "Remote Video Directing and Production",
+      description:
+        "Direct and produce your video projects remotely with our expert guidance, ensuring a seamless production experience from anywhere.",
+      image: "/remote_directing.jpg",
+    },
+    {
+      title: "On-Demand Media Shooting",
+      description:
+        "We bring our high-quality equipment to your location to record media with professional precision and creativity.",
+      image: "/ondemand_media.jpg",
+    },
+    {
+      title: "Content Idea Generation and Management",
+      description:
+        "Let our team help you brainstorm and manage your content ideas, turning your visions into actionable plans.",
+      image: "/content_idea_gen.jpg",
+    },
+    {
+      title: "Mobile Photography and Cinematography",
+      description:
+        "Capture stunning images and videos with our mobile photography and cinematography services, perfect for any event.",
+      image: "/mobile_cinema.jpg",
+    },
+  ];
+  const [activeTab, setActiveTab] = useState("home");
+  const router = useRouter();
 
   const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
@@ -64,12 +69,12 @@ export default function Component() {
           events: {
             onClick: { enable: true, mode: "push" },
             onHover: { enable: true, mode: "repulse" },
-            resize: true
+            resize: true,
           },
           modes: {
             push: { quantity: 4 },
-            repulse: { distance: 200, duration: 0.4 }
-          }
+            repulse: { distance: 200, duration: 0.4 },
+          },
         },
         particles: {
           color: { value: "#ffffff" },
@@ -78,7 +83,7 @@ export default function Component() {
             distance: 150,
             enable: true,
             opacity: 0.5,
-            width: 1
+            width: 1,
           },
           move: {
             direction: "none",
@@ -86,17 +91,17 @@ export default function Component() {
             outModes: { default: "bounce" },
             random: false,
             speed: 2,
-            straight: false
+            straight: false,
           },
           number: {
             density: { enable: true, area: 800 },
-            value: 80
+            value: 80,
           },
           opacity: { value: 0.5 },
           shape: { type: "circle" },
-          size: { value: { min: 1, max: 5 } }
+          size: { value: { min: 1, max: 5 } },
         },
-        detectRetina: true
+        detectRetina: true,
       });
     };
 
@@ -119,26 +124,38 @@ export default function Component() {
         />
         <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
         <div className="container mx-auto px-4 text-center relative z-20">
-
-          {/* Updated Mediava text with Fugaz One font */}
-          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-bold uppercase mb-4 animate-blink ${fugaz.className}`}>
+          <h1
+            className={`text-6xl md:text-7xl lg:text-8xl font-bold uppercase mb-4 animate-blink ${fugaz.className}`}
+          >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">
               Mediava
             </span>
           </h1>
 
-          {/* Static subheader */}
           <p className="text-xl md:text-2xl lg:text-3xl italic text-gray-300 mb-8">
             Create, Edit and Manage Content like a Media Boss
           </p>
 
-          {/* CTA Button */}
-          <button className="px-8 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:scale-105 transition-all duration-300">
-            Take me for a spin
-          </button>
+          {/* Stacking Login and Create Account buttons */}
+          <div className="space-y-2 flex flex-col items-center">
+            <button
+              className="w-full px-6 py-3 text-lg font-medium rounded-full border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white transition-all duration-300"
+              onClick={() => router.push("/signin")}
+            >
+              Login
+            </button>
+
+            <button
+              className="w-full px-6 py-3 text-lg font-medium rounded-full border-2 border-fuchsia-500 text-fuchsia-500 hover:bg-fuchsia-500 hover:text-white transition-all duration-300"
+              onClick={() => router.push("/signup")}
+            >
+              Create Account
+            </button>
+          </div>
         </div>
       </header>
 
+      {/* Services Section */}
       <div className="container mx-auto px-4 py-16">
         <section className="py-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -150,8 +167,13 @@ export default function Component() {
             {services.map((service: Service, index: number) => (
               <div
                 key={index}
-                className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-103 hover:shadow-2xl"
+                className="relative bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-103 hover:shadow-2xl"
               >
+                {index !== 0 && (
+                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg">
+                    Coming Soon
+                  </div>
+                )}
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -163,7 +185,7 @@ export default function Component() {
                   <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                   {service.subservices && (
                     <p className="text-sm text-cyan-400 mb-2">
-                      {service.subservices.join(', ')}
+                      {service.subservices.join(", ")}
                     </p>
                   )}
                   <p className="text-gray-300">{service.description}</p>
@@ -174,13 +196,24 @@ export default function Component() {
         </section>
       </div>
 
+      {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 bg-black border-t-2 border-cyan-500 py-2">
         <ul className="flex justify-around items-center">
-          {[{ name: 'Home', icon: faHome }, { name: 'Tools', icon: faFire }, { name: 'Profile', icon: faUser }].map(item => (
+          {[
+            { name: "Home", icon: faHome, path: "/" },
+            { name: "Tools", icon: faFire, path: "/tool" },
+            { name: "Profile", icon: faUser, path: "/profile" },
+          ].map((item) => (
             <li key={item.name} className="text-center">
               <button
-                onClick={() => setActiveTab(item.name.toLowerCase())}
-                className={`flex flex-col items-center p-2 ${activeTab === item.name.toLowerCase() ? 'text-cyan-500' : 'text-gray-400'}`}
+                onClick={() => {
+                  setActiveTab(item.name.toLowerCase());
+                  router.push(item.path);
+                }}
+                className={`flex flex-col items-center p-2 ${activeTab === item.name.toLowerCase()
+                    ? "text-cyan-500"
+                    : "text-gray-400"
+                  }`}
               >
                 <FontAwesomeIcon icon={item.icon} className="text-2xl mb-1" />
                 <span className="text-xs">{item.name}</span>
@@ -191,20 +224,26 @@ export default function Component() {
       </nav>
 
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
         html {
           scroll-behavior: smooth;
         }
         body {
-          font-family: 'Poppins', sans-serif;
+          font-family: "Poppins", sans-serif;
         }
         .animate-blink {
           animation: blink 1.5s infinite;
         }
         @keyframes blink {
-          0% { opacity: 1; }
-          50% { opacity: 0.5; }
-          100% { opacity: 1; }
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
         }
         .hover\:scale-103:hover {
           transform: scale(1.03);
