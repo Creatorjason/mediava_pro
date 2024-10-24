@@ -129,7 +129,7 @@ export default function Component() {
             className={`text-6xl md:text-7xl lg:text-8xl font-bold uppercase mb-4 animate-blink ${fugaz.className}`}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">
-              Mediava
+              Creplanos
             </span>
           </h1>
 
