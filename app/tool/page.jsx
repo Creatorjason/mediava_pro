@@ -11,10 +11,40 @@ import BottomNavBar from '../components/BottomNavBar/BottomNavBar'
 
 const tools = [
   {
-    title: 'Editing Factory',
-    description: 'Upload your video, image or audio and get professional edits done remotely.',
-    image: '/edit-factory.jpg', // Adjust path accordingly
+    title: 'creEdit',
+    description: "Transform your raw video, images, or audio into professional masterpieces. Whether it's a quick touch-up or a full-scale edit, we handle it all remotely, so you can focus on what matters.",
+    image: '/creedit.jpg', // Adjust path accordingly
     link: '/tool/video-edit-factory'
+  },
+  {
+    title: 'creDesign',
+    description: 'Unleash your creativity! From sleek user interfaces to vibrant logos, our design experts are ready to bring your visions to life, all without you ever leaving your workspace.',
+    image: '/credesign.jpg', // Adjust path accordingly
+    link: '/tool/design-factory'
+  },
+  {
+    title: "creContent",
+    description: "Stuck for ideas? We’ve got you covered! Collaborate with our content strategists to spark new ideas and streamline your content creation process—remotely, efficiently, and brilliantly.",
+    image: "/crecontent.jpg", // Adjust path accordingly
+    link: '/tool/content-factory'
+  },
+  {
+    title: "creAudio",
+    description: "Need a catchy jingle, voiceover, or that perfect sound mix? With our top-notch audio services, you'll get high-quality audio projects delivered remotely and always on time.",
+    image:"/creaudio.jpg", // Adjust path accordingly
+    link:"/tool/audio-factory"
+  },
+  {
+    title:"creShots",
+    description:"Get studio-quality shots from anywhere. Our mobile photography and cinematography experts will help you capture every moment, as if you had a full production crew right at home.",
+    image:"/creshots.jpg", // Adjust path accordingly
+    link:"/tool/ilocation-shooter"
+  },
+  {
+    title:"creArt",
+    description:"Turn your artistic ideas into reality! Whether it's a painting, sculpture, or a digital masterpiece, we offer remote services to help bring your creations to life.",
+    image:"/creart.jpg", // Adjust path accordingly
+    link:"/tool/ilocation-shooter"
   }
 ]
 
@@ -28,7 +58,7 @@ const Page = () => {
       <div className="min-h-screen bg-gradient-to-b from-gray-800 to-black text-white">
         <div className="container mx-auto py-12 px-4 md:px-8">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">
-            Available Tools
+            Available Services
           </h1>
 
           {/* Grid layout that adjusts based on screen size */}
@@ -56,7 +86,8 @@ const Page = () => {
         </div>
       </div>
 
-          
+          <br/>
+          <br/>
           <BottomNavBar />
     </>
   )
