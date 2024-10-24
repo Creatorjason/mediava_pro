@@ -43,7 +43,7 @@ const Page = () => {
         </div>
 
         {/* Form */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Editing Factory 🎥</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Cre Edit 🎥</h1>
         <form className="bg-gray-800 p-6 rounded-lg shadow-md" onSubmit={handleSubmit}>
           
           {/* Media Type Selector */}

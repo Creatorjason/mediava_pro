@@ -14,12 +14,12 @@ const tools = [
     title: 'creEdit',
     description: "Transform your raw video, images, or audio into professional masterpieces. Whether it's a quick touch-up or a full-scale edit, we handle it all remotely, so you can focus on what matters.",
     image: '/creedit.jpg', // Adjust path accordingly
-    link: '/tool/video-edit-factory'
+    link: '/tool/cre-edit'
   },
   {
-    title: 'creDesign',
-    description: 'Unleash your creativity! From sleek user interfaces to vibrant logos, our design experts are ready to bring your visions to life, all without you ever leaving your workspace.',
-    image: '/credesign.jpg', // Adjust path accordingly
+    title: 'creUI',
+    description: "Design beautiful and intuitive user interfaces with our remote UI experts. Whether it's a sleek app design or a dynamic web interface, we bring your ideas to life while you focus on the bigger picture—without leaving your desk.",
+    image: '/creui.jpg', // Adjust path accordingly
     link: '/tool/design-factory'
   },
   {
@@ -31,21 +31,34 @@ const tools = [
   {
     title: "creAudio",
     description: "Need a catchy jingle, voiceover, or that perfect sound mix? With our top-notch audio services, you'll get high-quality audio projects delivered remotely and always on time.",
-    image:"/creaudio.jpg", // Adjust path accordingly
-    link:"/tool/audio-factory"
+    image: "/creaudio.jpg", // Adjust path accordingly
+    link: "/tool/audio-factory"
   },
   {
-    title:"creShots",
-    description:"Get studio-quality shots from anywhere. Our mobile photography and cinematography experts will help you capture every moment, as if you had a full production crew right at home.",
-    image:"/creshots.jpg", // Adjust path accordingly
-    link:"/tool/ilocation-shooter"
+    title: "creShots",
+    description: "Get studio-quality shots from anywhere. Our mobile photography and cinematography experts will help you capture every moment, as if you had a full production crew right at home.",
+    image: "/creshots.jpg", // Adjust path accordingly
+    link: "/tool/ilocation-shooter"
   },
   {
-    title:"creArt",
-    description:"Turn your artistic ideas into reality! Whether it's a painting, sculpture, or a digital masterpiece, we offer remote services to help bring your creations to life.",
-    image:"/creart.jpg", // Adjust path accordingly
-    link:"/tool/ilocation-shooter"
+    title: "creArt",
+    description: "Turn your artistic ideas into reality! Whether it's a painting, sculpture, or a digital masterpiece, we offer remote services to help bring your creations to life.",
+    image: "/creart.jpg", // Adjust path accordingly
+    link: "/tool/ilocation-shooter"
+  },
+  {
+    title: "creBrand",
+    description: "Elevate your brand effortlessly! From logo design to full-fledged brand strategies, our remote branding service ensures your business stands out—professionally, affordably, and always on time.",
+    image: "/creBrand.jpg", // Adjust path accordingly
+    link: "/tool/ilocation-shooter"
+  },
+  {
+    title: "cre3D",
+    description: "Bring your 3D visions to life with our advanced 3D modeling and rendering services. From product designs to architectural visualizations, we create immersive and detailed 3D experiences—remotely and professionally.",
+    image: "/cre3d.jpg", // Adjust path accordingly
+    link: "/tool/3d-factory"
   }
+
 ]
 
 const Page = () => {
@@ -86,9 +99,9 @@ const Page = () => {
         </div>
       </div>
 
-          <br/>
-          <br/>
-          <BottomNavBar />
+      <br />
+      <br />
+      <BottomNavBar />
     </>
   )
 }
