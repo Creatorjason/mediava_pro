@@ -1,143 +1,389 @@
-"use client"
+// "use client"
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+// import { useState } from 'react'
+// import { useRouter } from 'next/navigation'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
-const Page = () => {
-  const [mediaType, setMediaType] = useState('video'); // default to 'video'
-  const [mediaFile, setMediaFile] = useState(null)
-  const [details, setDetails] = useState('')
-  const [urgency, setUrgency] = useState('normal')
-  const [voiceNote, setVoiceNote] = useState(null)
-  const router = useRouter()
+// const Page = () => {
+//   const [mediaType, setMediaType] = useState('video'); // default to 'video'
+//   const [mediaFile, setMediaFile] = useState(null)
+//   const [details, setDetails] = useState('')
+//   const [urgency, setUrgency] = useState('normal')
+//   const [voiceNote, setVoiceNote] = useState(null)
+//   const router = useRouter()
 
-  const handleMediaChange = (e) => {
-    setMediaFile(e.target.files[0])
-  }
+//   const handleMediaChange = (e) => {
+//     setMediaFile(e.target.files[0])
+//   }
 
-  const handleVoiceNoteChange = (e) => {
-    setVoiceNote(e.target.files[0])
-  }
+//   const handleVoiceNoteChange = (e) => {
+//     setVoiceNote(e.target.files[0])
+//   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Process form submission (send to API, etc.)
-    console.log({ mediaFile, details, urgency, voiceNote, mediaType })
-  }
+//   const handleSubmit = (e) => {
+//     e.preventDefault()
+//     // Process form submission (send to API, etc.)
+//     console.log({ mediaFile, details, urgency, voiceNote, mediaType })
+//   }
+
+//   return (
+//     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-4">
+//       <div className="container max-w-lg lg:max-w-2xl mx-auto py-16">
+
+//         {/* Back Button */}
+//         <div className="mb-4">
+//           <button 
+//             className="flex items-center text-gray-300 hover:text-white" 
+//             onClick={() => router.back()}
+//           >
+//             <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+//             <span>Back</span>
+//           </button>
+//         </div>
+
+//         {/* Form */}
+//         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Cre Edit 🎥</h1>
+//         <form className="bg-gray-800 p-6 rounded-lg shadow-md" onSubmit={handleSubmit}>
+
+//           {/* Media Type Selector */}
+//           <div className="flex justify-center mb-6">
+//             <button 
+//               type="button" 
+//               className={`px-4 py-2 rounded-l-full ${mediaType === 'video' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'}`} 
+//               onClick={() => setMediaType('video')}
+//             >
+//               Video
+//             </button>
+//             <button 
+//               type="button" 
+//               className={`px-4 py-2 ${mediaType === 'image' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'}`} 
+//               onClick={() => setMediaType('image')}
+//             >
+//               Image
+//             </button>
+//             <button 
+//               type="button" 
+//               className={`px-4 py-2 rounded-r-full ${mediaType === 'audio' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'}`} 
+//               onClick={() => setMediaType('audio')}
+//             >
+//               Audio
+//             </button>
+//           </div>
+
+//           {/* Media Upload */}
+//           <div className="mb-6">
+//             <label className="block mb-2 font-bold text-base" htmlFor="mediaFile">Upload {mediaType.charAt(0).toUpperCase() + mediaType.slice(1)}</label>
+//             <input
+//               type="file"
+//               accept={mediaType === 'video' ? 'video/*' : mediaType === 'image' ? 'image/*' : 'audio/*'}
+//               id="mediaFile"
+//               onChange={handleMediaChange}
+//               className="w-full p-2 rounded bg-gray-700 text-white"
+//               required
+//             />
+//           </div>
+
+//           {/* Details Input */}
+//           <div className="mb-6">
+//             <label className="block mb-2 font-bold text-base" htmlFor="details">What would you like done?</label>
+//             <textarea
+//               id="details"
+//               className="w-full p-3 rounded bg-gray-700 text-white"
+//               value={details}
+//               onChange={(e) => setDetails(e.target.value)}
+//               placeholder="Describe the edits you want..."
+//               required
+//             ></textarea>
+//           </div>
+
+//           {/* Voice Note Upload */}
+//           <div className="mb-6">
+//             <label className="block mb-2 font-bold text-base" htmlFor="voiceNote">Upload Voice Note (Optional)</label>
+//             <input
+//               type="file"
+//               accept="audio/*"
+//               id="voiceNote"
+//               onChange={handleVoiceNoteChange}
+//               className="w-full p-2 rounded bg-gray-700 text-white"
+//             />
+//           </div>
+
+//           {/* Urgency Selector */}
+//           <div className="mb-6">
+//             <label className="block mb-2 font-bold text-base">Urgency</label>
+//             <select
+//               value={urgency}
+//               onChange={(e) => setUrgency(e.target.value)}
+//               className="w-full p-3 rounded bg-gray-700 text-white"
+//             >
+//               <option value="normal">Normal</option>
+//               <option value="urgent">Urgent (+ Cost)</option>
+//             </select>
+//             {urgency === 'urgent' && (
+//               <p className="text-sm text-red-500 mt-2">
+//                 Urgency will increase the cost of editing.
+//               </p>
+//             )}
+//           </div>
+
+//           {/* Submit Button */}
+//           <button
+//             type="submit"
+//             className="w-full py-3 font-bold rounded bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:scale-105 transition-transform"
+//           >
+//             Edit My {mediaType.charAt(0).toUpperCase() + mediaType.slice(1)}
+//           </button>
+//         </form>
+//       </div>
+//     </div>
+//   )
+// }
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileVideo, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import BottomNavBar from "@/app/components/BottomNavBar/BottomNavBar";
+
+// Placeholder data
+const recentEdits = [
+  "I want to edit a video for cats",
+  "Last video of John Wick needs a review",
+  "Make an edit on memo",
+  "Edit fire",
+];
+const stats = [
+  { label: "Editors", value: "20+" },
+  { label: "CB Spent", value: "15k" },
+  { label: "CB Saved", value: "7k" },
+  { label: "Completed Edits", value: "6k" },
+];
+
+// Sample data for Top Edits
+const topEdits = [
+  {
+    title: "Funny Cats",
+    timeTaken: "10 mins",
+    by: "Creplanos",
+    views: "7.9K",
+    timeAgo: "1 day ago",
+    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+  },
+  {
+    title: "Sleeping Dragon",
+    timeTaken: "10 mins",
+    by: "Creplanos",
+    views: "7.9K",
+    timeAgo: "1 day ago",
+    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+  },
+  {
+    title: "How to build a startup",
+    timeTaken: "10 mins",
+    by: "Creplanos",
+    views: "7.9K",
+    timeAgo: "1 day ago",
+    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+  },
+  {
+    title: "The art of problem solving",
+    timeTaken: "10 mins",
+    by: "Creplanos",
+    views: "7.9K",
+    timeAgo: "1 day ago",
+    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+  },
+  {
+    title: "HolySpirit, the Best",
+    timeTaken: "10 mins",
+    by: "Creplanos",
+    views: "7.9K",
+    timeAgo: "1 day ago",
+    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+  },
+  // Add more items as needed
+];
+
+export default function CreEditPage() {
+  const [selectedEdit, setSelectedEdit] = useState(null);
+  const [editDetails, setEditDetails] = useState({
+    videoFile: null,
+    description: "",
+    voiceNote: null,
+    urgency: "Normal",
+  });
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setEditDetails({ ...editDetails, [e.target.name]: file });
+  };
+
+  const handleTextChange = (e) => {
+    setEditDetails({ ...editDetails, description: e.target.value });
+  };
+
+  const handleUrgencyChange = (e) => {
+    setEditDetails({ ...editDetails, urgency: e.target.value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(editDetails);
+  };
+
+  const [editType, setEditType] = useState("Video"); // Toggle state
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-4">
-      <div className="container max-w-lg lg:max-w-2xl mx-auto py-16">
-        
-        {/* Back Button */}
-        <div className="mb-4">
-          <button 
-            className="flex items-center text-gray-300 hover:text-white" 
-            onClick={() => router.back()}
-          >
-            <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
-            <span>Back</span>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans flex">
+      {/* Sidebar */}
+      <aside className={`fixed inset-y-0 left-0 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform bg-gray-800 w-64 p-6 z-50 lg:translate-x-0 lg:relative`}>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-semibold">Your Edits</h2>
+          <button className="lg:hidden" onClick={() => setSidebarOpen(false)}>
+            <FontAwesomeIcon icon={faTimes} className="text-white text-xl" />
           </button>
         </div>
-
-        {/* Form */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Cre Edit 🎥</h1>
-        <form className="bg-gray-800 p-6 rounded-lg shadow-md" onSubmit={handleSubmit}>
-          
-          {/* Media Type Selector */}
-          <div className="flex justify-center mb-6">
-            <button 
-              type="button" 
-              className={`px-4 py-2 rounded-l-full ${mediaType === 'video' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'}`} 
-              onClick={() => setMediaType('video')}
+        <div className="space-y-4">
+          {recentEdits.map((edit, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedEdit(edit)}
+              className="w-full p-3 bg-gray-700 rounded-lg text-left text-white hover:bg-gray-600 transition"
             >
-              Video
+              {edit}
             </button>
-            <button 
-              type="button" 
-              className={`px-4 py-2 ${mediaType === 'image' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'}`} 
-              onClick={() => setMediaType('image')}
-            >
-              Image
-            </button>
-            <button 
-              type="button" 
-              className={`px-4 py-2 rounded-r-full ${mediaType === 'audio' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'}`} 
-              onClick={() => setMediaType('audio')}
-            >
-              Audio
-            </button>
+          ))}
+        </div>
+      </aside>
+
+      {/* Main content area */}
+      <main className="flex-grow p-8 lg:ml-64">
+        {/* Hamburger icon for mobile */}
+        <button className="lg:hidden mb-6" onClick={() => setSidebarOpen(true)}>
+          <FontAwesomeIcon icon={faBars} className="text-white text-2xl" />
+        </button>
+
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold flex items-center justify-center">
+            Cre Edit <FontAwesomeIcon icon={faFileVideo} className="ml-3 text-cyan-400" />
+          </h2>
+        </div>
+
+        <div className="max-w-2xl mx-auto space-y-8">
+          {/* Edit Form */}
+          <div className="max-w-2xl mx-auto space-y-8">
+            {/* Toggle for Image or Video */}
+            <div className="flex justify-center mb-4">
+              <button
+                onClick={() => setEditType("Video")}
+                className={`px-4 py-2 rounded-l-lg ${editType === "Video" ? "bg-cyan-500" : "bg-gray-700"} text-white`}
+              >
+                Video
+              </button>
+              <button
+                onClick={() => setEditType("Image")}
+                className={`px-4 py-2 rounded-r-lg ${editType === "Image" ? "bg-cyan-500" : "bg-gray-700"} text-white`}
+              >
+                Image
+              </button>
+            </div>
+
+            {/* Edit Form */}
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-4">Edit Form</h3>
+              <form onSubmit={handleFormSubmit}>
+                <label className="block mb-4">
+                  <span className="text-gray-300">Upload {editType}</span>
+                  <input
+                    type="file"
+                    name="file"
+                    accept={editType === "Video" ? "video/*" : "image/*"}
+                    onChange={handleFileChange}
+                    className="block w-full text-gray-400 mt-2"
+                  />
+                </label>
+
+                <label className="block mb-4">
+                  <span className="text-gray-300">What would you like done?</span>
+                  <textarea
+                    placeholder="Describe the edits you want..."
+                    value={editDetails.description}
+                    onChange={handleTextChange}
+                    className="w-full mt-2 p-3 rounded bg-gray-700 text-white"
+                  />
+                </label>
+
+                {/* Voice Note Upload */}
+                <label className="block mb-4">
+                  <span className="text-gray-300">Upload Voice Note (Optional)</span>
+                  <input
+                    type="file"
+                    accept="audio/*"
+                    className="block w-full text-gray-400 mt-2"
+                  />
+                </label>
+
+                <label className="block mb-4">
+                  <span className="text-gray-300">Urgency</span>
+                  <select
+                    value={editDetails.urgency}
+                    onChange={handleUrgencyChange}
+                    className="w-full mt-2 p-3 rounded bg-gray-700 text-white"
+                  >
+                    <option value="Normal">Normal</option>
+                    <option value="High">High</option>
+                    <option value="Urgent">Urgent</option>
+                  </select>
+                </label>
+
+                <button
+                  type="submit"
+                  className="w-full mt-4 p-3 font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-lg hover:scale-105 transition-transform"
+                >
+                  Edit My {editType}
+                </button>
+              </form>
+            </div>
+          </div>
+          {/* Stats Section */}
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <p className="text-2xl font-bold">{stat.value}</p>
+                <p className="text-gray-400">{stat.label}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Media Upload */}
-          <div className="mb-6">
-            <label className="block mb-2 font-bold text-base" htmlFor="mediaFile">Upload {mediaType.charAt(0).toUpperCase() + mediaType.slice(1)}</label>
-            <input
-              type="file"
-              accept={mediaType === 'video' ? 'video/*' : mediaType === 'image' ? 'image/*' : 'audio/*'}
-              id="mediaFile"
-              onChange={handleMediaChange}
-              className="w-full p-2 rounded bg-gray-700 text-white"
-              required
-            />
-          </div>
-
-          {/* Details Input */}
-          <div className="mb-6">
-            <label className="block mb-2 font-bold text-base" htmlFor="details">What would you like done?</label>
-            <textarea
-              id="details"
-              className="w-full p-3 rounded bg-gray-700 text-white"
-              value={details}
-              onChange={(e) => setDetails(e.target.value)}
-              placeholder="Describe the edits you want..."
-              required
-            ></textarea>
-          </div>
-
-          {/* Voice Note Upload */}
-          <div className="mb-6">
-            <label className="block mb-2 font-bold text-base" htmlFor="voiceNote">Upload Voice Note (Optional)</label>
-            <input
-              type="file"
-              accept="audio/*"
-              id="voiceNote"
-              onChange={handleVoiceNoteChange}
-              className="w-full p-2 rounded bg-gray-700 text-white"
-            />
-          </div>
-
-          {/* Urgency Selector */}
-          <div className="mb-6">
-            <label className="block mb-2 font-bold text-base">Urgency</label>
-            <select
-              value={urgency}
-              onChange={(e) => setUrgency(e.target.value)}
-              className="w-full p-3 rounded bg-gray-700 text-white"
-            >
-              <option value="normal">Normal</option>
-              <option value="urgent">Urgent (+ Cost)</option>
-            </select>
-            {urgency === 'urgent' && (
-              <p className="text-sm text-red-500 mt-2">
-                Urgency will increase the cost of editing.
-              </p>
-            )}
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3 font-bold rounded bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:scale-105 transition-transform"
-          >
-            Edit My {mediaType.charAt(0).toUpperCase() + mediaType.slice(1)}
-          </button>
-        </form>
-      </div>
+          {/* Top Edits Section */}
+          {/* Top Edits Section */}
+          <section className="py-4">
+            <h2 className="text-2xl font-semibold mb-4">Top Edits</h2>
+            <div className="grid grid-cols-1 gap-6"> {/* Force a single column */}
+              {topEdits.map((edit, index) => (
+                <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition">
+                  <Image src={edit.thumbnail} alt={edit.title} width={320} height={180} className="rounded-lg mb-2" />
+                  <div>
+                    <h3 className="text-lg font-bold text-white">{edit.title}</h3>
+                    <p className="text-sm text-gray-400">
+                      Time taken: {edit.timeTaken} - By: {edit.by}
+                    </p>
+                    <p className="text-sm text-gray-400">{edit.views} views • {edit.timeAgo}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+          <br/>
+      <br/>
+      <br/>
+      <br/>
+        </div>
+      </main>
+   
+      <BottomNavBar/>
     </div>
-  )
+  );
 }
-
-export default Page
