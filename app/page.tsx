@@ -19,7 +19,7 @@
 //     description: string;
 //     image: string;
 //   }
-  
+
 //   const services: Service[] = [
 //     {
 //       title: "Remote Edit",
@@ -452,6 +452,14 @@ export default function Component() {
         </section>
       </div>
 
+      {/* What We Do Section */}
+      <div className="container mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold text-center mb-8">What We Do</h2>
+        <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-12">
+          A versatile media platform designed for creators and distributors to produce, share, and distribute high-quality content to a broad audience. Creplanos offers tools for content creation, monetization options, and distribution channels, making it easier for creators to reach and engage their audiences with compelling media experiences.
+        </p>
+      </div>
+
       {/* How It Works Section */}
       <div className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-center mb-8">How It Works</h2>
@@ -475,10 +483,10 @@ export default function Component() {
           ))}
         </div>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
+      <br />
 
       {/* Bottom Navigation */}
       <BottomNavBar />
@@ -512,10 +520,10 @@ export default function Component() {
           }
           p {
             font-size: 1.2rem}`}</style>
-             </div>
+    </div>
   );
 }
-            
+
 //   To improve the landing page, here are some potential adjustments:
 
 // 1. **Enhanced Hero Section**: Use dynamic backgrounds, subtle animations, or video loops to give a more professional look. Keep the call-to-action buttons prominent with stronger verbiage, such as "Get Started Now" or "Join Our Creative Hub."

@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation"; // Correct import for app directory
 
 const SignUp = () => {
   const router = useRouter();
+  const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(""); // Added phone state
   const [password, setPassword] = useState("");
@@ -20,8 +23,10 @@ const SignUp = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    // Logic for signing up goes here
     console.log({
+      firstName,
+      middleName,
+      lastName,
       email,
       phone,
       password,
@@ -30,7 +35,6 @@ const SignUp = () => {
       portfolio,
       interview,
     });
-    // Redirect to home page after signing up
     router.push("/");
   };
 
@@ -65,6 +69,51 @@ const SignUp = () => {
             </button>
           </div>
 
+          {/* First Name */}
+          <div className="mb-6">
+            <label className="block mb-2 font-bold" htmlFor="firstName">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              className="w-full p-3 rounded bg-gray-700 text-white"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Middle Name */}
+          <div className="mb-6">
+            <label className="block mb-2 font-bold" htmlFor="middleName">
+              Middle Name
+            </label>
+            <input
+              type="text"
+              id="middleName"
+              className="w-full p-3 rounded bg-gray-700 text-white"
+              value={middleName}
+              onChange={(e) => setMiddleName(e.target.value)}
+            />
+          </div>
+
+          {/* Last Name */}
+          <div className="mb-6">
+            <label className="block mb-2 font-bold" htmlFor="lastName">
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              className="w-full p-3 rounded bg-gray-700 text-white"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Email */}
           <div className="mb-6">
             <label className="block mb-2 font-bold" htmlFor="email">
               Email
@@ -79,6 +128,7 @@ const SignUp = () => {
             />
           </div>
 
+          {/* Phone Number */}
           <div className="mb-6">
             <label className="block mb-2 font-bold" htmlFor="phone">
               Phone Number
@@ -93,6 +143,7 @@ const SignUp = () => {
             />
           </div>
 
+          {/* Password */}
           <div className="mb-6">
             <label className="block mb-2 font-bold" htmlFor="password">
               Password
@@ -107,6 +158,7 @@ const SignUp = () => {
             />
           </div>
 
+          {/* Confirm Password */}
           <div className="mb-6">
             <label className="block mb-2 font-bold" htmlFor="confirmPassword">
               Confirm Password
@@ -180,8 +232,6 @@ const SignUp = () => {
                   Available for a brief interview
                 </label>
               </div>
-
-              {/* Note for Creatives */}
               <p className="text-sm text-red-400">
                 Please ensure your portfolio links are correct. Mediava will not reach back to you for an interview if incorrect details are provided.
               </p>
