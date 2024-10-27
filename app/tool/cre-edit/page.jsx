@@ -139,12 +139,151 @@
 //     </div>
 //   )
 // }
+// "use client";
+// import { useState } from "react";
+// import Image from "next/image";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFileVideo, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+// import BottomNavBar from "@/app/components/BottomNavBar/BottomNavBar";
+// import Stats from "@/app/components/Stats/Stats";
+// import Sidebar from "@/app/components/Sidebar/Sidebar";
+// import EditForm from "@/app/components/EditForm/EditForm";
+// import Tops from "@/app/components/Tops/Tops";
+// // Placeholder data
+// const recentEdits = [
+//   "I want to edit a video for cats",
+//   "Last video of John Wick needs a review",
+//   "Make an edit on memo",
+//   "Edit fire",
+// ];
+// const stats = [
+//   { label: "Editors", value: "20+" },
+//   { label: "CB Spent", value: "15k" },
+//   { label: "CB Saved", value: "7k" },
+//   { label: "Completed Edits", value: "6k" },
+// ];
+
+// // Sample data for Top Edits
+// const topEdits = [
+//   {
+//     title: "Funny Cats",
+//     timeTaken: "10 mins",
+//     by: "Creplanos",
+//     views: "7.9K",
+//     timeAgo: "1 day ago",
+//     thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+//   },
+//   {
+//     title: "Sleeping Dragon",
+//     timeTaken: "10 mins",
+//     by: "Creplanos",
+//     views: "7.9K",
+//     timeAgo: "1 day ago",
+//     thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+//   },
+//   {
+//     title: "How to build a startup",
+//     timeTaken: "10 mins",
+//     by: "Creplanos",
+//     views: "7.9K",
+//     timeAgo: "1 day ago",
+//     thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+//   },
+//   {
+//     title: "The art of problem solving",
+//     timeTaken: "10 mins",
+//     by: "Creplanos",
+//     views: "7.9K",
+//     timeAgo: "1 day ago",
+//     thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+//   },
+//   {
+//     title: "HolySpirit, the Best",
+//     timeTaken: "10 mins",
+//     by: "Creplanos",
+//     views: "7.9K",
+//     timeAgo: "1 day ago",
+//     thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
+//   },
+//   // Add more items as needed
+// ];
+
+// export default function CreEditPage() {
+//   const [selectedEdit, setSelectedEdit] = useState(null);
+//   const [editDetails, setEditDetails] = useState({
+//     videoFile: null,
+//     description: "",
+//     voiceNote: null,
+//     urgency: "Normal",
+//   });
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+//   const handleFileChange = (e) => {
+//     const file = e.target.files[0];
+//     setEditDetails({ ...editDetails, [e.target.name]: file });
+//   };
+
+//   const handleTextChange = (e) => {
+//     setEditDetails({ ...editDetails, description: e.target.value });
+//   };
+
+//   const handleUrgencyChange = (e) => {
+//     setEditDetails({ ...editDetails, urgency: e.target.value });
+//   };
+
+//   const handleFormSubmit = (e) => {
+//     e.preventDefault();
+//     console.log(editDetails);
+//   };
+
+//   const [editType, setEditType] = useState("Video"); // Toggle state
+
+//   return (
+//     <>
+//       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans flex">
+//         {/* Sidebar component with responsive visibility */}
+//         <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} edits={recentEdits} setSelectedEdit={setSelectedEdit} />
+
+//         <main className="flex-grow p-8 lg:ml-64">
+//           {/* Mobile Hamburger Icon */}
+//           <button className="lg:hidden mb-6" onClick={() => setSidebarOpen(true)}>
+//             <FontAwesomeIcon icon={faBars} className="text-white text-2xl" />
+//           </button>
+
+//           {/* Page Title */}
+//           <div className="text-center mb-8">
+//             <h2 className="text-4xl font-bold flex items-center justify-center">
+//               Cre Edit <FontAwesomeIcon icon={faFileVideo} className="ml-3 text-cyan-400" />
+//             </h2>
+//           </div>
+
+//           {/* Edit Form */}
+//           <EditForm type="Video" showCategory={true} showOptions={true} />
+
+//           {/* Stats Section */}
+//           <Stats stats={stats} />
+
+//           {/* Top Edits Section */}
+//           <Tops edits={topEdits} />
+//         </main>
+//       </div>
+
+//       {/* Bottom Navigation Bar */}
+//       <BottomNavBar />
+//     </>
+//     );
+// }
+
+
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileVideo, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faFileVideo, faBars } from "@fortawesome/free-solid-svg-icons";
 import BottomNavBar from "@/app/components/BottomNavBar/BottomNavBar";
+import Stats from "@/app/components/Stats/Stats";
+import Sidebar from "@/app/components/Sidebar/Sidebar";
+import EditForm from "@/app/components/EditForm/EditForm";
+import Tops from "@/app/components/Tops/Tops";
 
 // Placeholder data
 const recentEdits = [
@@ -159,231 +298,64 @@ const stats = [
   { label: "CB Saved", value: "7k" },
   { label: "Completed Edits", value: "6k" },
 ];
-
-// Sample data for Top Edits
 const topEdits = [
-  {
-    title: "Funny Cats",
-    timeTaken: "10 mins",
-    by: "Creplanos",
-    views: "7.9K",
-    timeAgo: "1 day ago",
-    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
-  },
-  {
-    title: "Sleeping Dragon",
-    timeTaken: "10 mins",
-    by: "Creplanos",
-    views: "7.9K",
-    timeAgo: "1 day ago",
-    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
-  },
-  {
-    title: "How to build a startup",
-    timeTaken: "10 mins",
-    by: "Creplanos",
-    views: "7.9K",
-    timeAgo: "1 day ago",
-    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
-  },
-  {
-    title: "The art of problem solving",
-    timeTaken: "10 mins",
-    by: "Creplanos",
-    views: "7.9K",
-    timeAgo: "1 day ago",
-    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
-  },
-  {
-    title: "HolySpirit, the Best",
-    timeTaken: "10 mins",
-    by: "Creplanos",
-    views: "7.9K",
-    timeAgo: "1 day ago",
-    thumbnail: "/path/to/thumbnail.jpg", // Use a valid image path
-  },
-  // Add more items as needed
+  { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
+  { title: "Sleeping Dragon", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
+  { title: "How to build a startup", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
+  { title: "The art of problem solving", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
+  { title: "HolySpirit, the Best", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
 ];
 
 export default function CreEditPage() {
-  const [selectedEdit, setSelectedEdit] = useState(null);
-  const [editDetails, setEditDetails] = useState({
-    videoFile: null,
-    description: "",
-    voiceNote: null,
-    urgency: "Normal",
-  });
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setEditDetails({ ...editDetails, [e.target.name]: file });
-  };
-
-  const handleTextChange = (e) => {
-    setEditDetails({ ...editDetails, description: e.target.value });
-  };
-
-  const handleUrgencyChange = (e) => {
-    setEditDetails({ ...editDetails, urgency: e.target.value });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log(editDetails);
-  };
-
-  const [editType, setEditType] = useState("Video"); // Toggle state
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans flex">
-      {/* Sidebar */}
-      <aside className={`fixed inset-y-0 left-0 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform bg-gray-800 w-64 p-6 z-50 lg:translate-x-0 lg:relative`}>
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-semibold">Your Edits</h2>
-          <button className="lg:hidden" onClick={() => setSidebarOpen(false)}>
-            <FontAwesomeIcon icon={faTimes} className="text-white text-xl" />
-          </button>
-        </div>
-        <div className="space-y-4">
-          {recentEdits.map((edit, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedEdit(edit)}
-              className="w-full p-3 bg-gray-700 rounded-lg text-left text-white hover:bg-gray-600 transition"
-            >
-              {edit}
-            </button>
-          ))}
-        </div>
-      </aside>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white flex overflow-y-auto lg:pb-0">
+      {/* Sidebar for recent edits */}
+      <Sidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        edits={recentEdits}
+        className="lg:translate-x-0 lg:relative"
+      />
 
-      {/* Main content area */}
-      <main className="flex-grow p-8 lg:ml-64">
+      {/* Main content */}
+      <main className="flex-grow p-8 max-w-4xl mx-auto lg:ml-64">
         {/* Hamburger icon for mobile */}
-        <button className="lg:hidden mb-6" onClick={() => setSidebarOpen(true)}>
+        <button
+          className="lg:hidden mb-6"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
           <FontAwesomeIcon icon={faBars} className="text-white text-2xl" />
         </button>
 
+        {/* Title */}
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold flex items-center justify-center">
             Cre Edit <FontAwesomeIcon icon={faFileVideo} className="ml-3 text-cyan-400" />
           </h2>
         </div>
 
-        <div className="max-w-2xl mx-auto space-y-8">
-          {/* Edit Form */}
-          <div className="max-w-2xl mx-auto space-y-8">
-            {/* Toggle for Image or Video */}
-            <div className="flex justify-center mb-4">
-              <button
-                onClick={() => setEditType("Video")}
-                className={`px-4 py-2 rounded-l-lg ${editType === "Video" ? "bg-cyan-500" : "bg-gray-700"} text-white`}
-              >
-                Video
-              </button>
-              <button
-                onClick={() => setEditType("Image")}
-                className={`px-4 py-2 rounded-r-lg ${editType === "Image" ? "bg-cyan-500" : "bg-gray-700"} text-white`}
-              >
-                Image
-              </button>
-            </div>
+        {/* Edit Form */}
+        <EditForm type="Video" showCategory={true} showOptions={true} />
 
-            {/* Edit Form */}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-4">Edit Form</h3>
-              <form onSubmit={handleFormSubmit}>
-                <label className="block mb-4">
-                  <span className="text-gray-300">Upload {editType}</span>
-                  <input
-                    type="file"
-                    name="file"
-                    accept={editType === "Video" ? "video/*" : "image/*"}
-                    onChange={handleFileChange}
-                    className="block w-full text-gray-400 mt-2"
-                  />
-                </label>
-
-                <label className="block mb-4">
-                  <span className="text-gray-300">What would you like done?</span>
-                  <textarea
-                    placeholder="Describe the edits you want..."
-                    value={editDetails.description}
-                    onChange={handleTextChange}
-                    className="w-full mt-2 p-3 rounded bg-gray-700 text-white"
-                  />
-                </label>
-
-                {/* Voice Note Upload */}
-                <label className="block mb-4">
-                  <span className="text-gray-300">Upload Voice Note (Optional)</span>
-                  <input
-                    type="file"
-                    accept="audio/*"
-                    className="block w-full text-gray-400 mt-2"
-                  />
-                </label>
-
-                <label className="block mb-4">
-                  <span className="text-gray-300">Urgency</span>
-                  <select
-                    value={editDetails.urgency}
-                    onChange={handleUrgencyChange}
-                    className="w-full mt-2 p-3 rounded bg-gray-700 text-white"
-                  >
-                    <option value="Normal">Normal</option>
-                    <option value="High">High</option>
-                    <option value="Urgent">Urgent</option>
-                  </select>
-                </label>
-
-                <button
-                  type="submit"
-                  className="w-full mt-4 p-3 font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-lg hover:scale-105 transition-transform"
-                >
-                  Edit My {editType}
-                </button>
-              </form>
-            </div>
-          </div>
-          {/* Stats Section */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <p className="text-2xl font-bold">{stat.value}</p>
-                <p className="text-gray-400">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Top Edits Section */}
-          {/* Top Edits Section */}
-          <section className="py-4">
-            <h2 className="text-2xl font-semibold mb-4">Top Edits</h2>
-            <div className="grid grid-cols-1 gap-6"> {/* Force a single column */}
-              {topEdits.map((edit, index) => (
-                <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition">
-                  <Image src={edit.thumbnail} alt={edit.title} width={320} height={180} className="rounded-lg mb-2" />
-                  <div>
-                    <h3 className="text-lg font-bold text-white">{edit.title}</h3>
-                    <p className="text-sm text-gray-400">
-                      Time taken: {edit.timeTaken} - By: {edit.by}
-                    </p>
-                    <p className="text-sm text-gray-400">{edit.views} views • {edit.timeAgo}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-          <br/>
-      <br/>
-      <br/>
-      <br/>
+        {/* Stats Section */}
+        <div className="mt-8">
+          <Stats stats={stats} />
         </div>
+
+        {/* Top Edits Section */}
+        <div className="mt-8">
+          <Tops edits={topEdits} />
+        </div>
+        <br/>
+        <br/>
       </main>
-   
-      <BottomNavBar/>
+
+      {/* Bottom Navigation Bar only for mobile */}
+      <div className="fixed bottom-0 left-0 w-full z-50 ">
+        <BottomNavBar />
+      </div>
     </div>
   );
 }

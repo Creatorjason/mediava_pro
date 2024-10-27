@@ -20,7 +20,7 @@ const tools = [
     title: 'creUI',
     description: "Design beautiful and intuitive user interfaces with our remote UI experts. Whether it's a sleek app design or a dynamic web interface, we bring your ideas to life while you focus on the bigger picture—without leaving your desk.",
     image: '/creui.jpg', // Adjust path accordingly
-    link: '/tool/design-factory'
+    link: '/tool/cre-ui'
   },
   {
     title: "creContent",
