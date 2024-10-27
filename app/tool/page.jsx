@@ -26,37 +26,37 @@ const tools = [
     title: "creContent",
     description: "Stuck for ideas? We’ve got you covered! Collaborate with our content strategists to spark new ideas and streamline your content creation process—remotely, efficiently, and brilliantly.",
     image: "/crecontent.jpg", // Adjust path accordingly
-    link: '/tool/content-factory'
+    link: '/tool/cre-content'
   },
   {
     title: "creAudio",
     description: "Need a catchy jingle, voiceover, or that perfect sound mix? With our top-notch audio services, you'll get high-quality audio projects delivered remotely and always on time.",
     image: "/creaudio.jpg", // Adjust path accordingly
-    link: "/tool/audio-factory"
+    link: "/tool/cre-audio"
   },
   {
     title: "creShots",
     description: "Get studio-quality shots from anywhere. Our mobile photography and cinematography experts will help you capture every moment, as if you had a full production crew right at home.",
     image: "/creshots.jpg", // Adjust path accordingly
-    link: "/tool/ilocation-shooter"
+    link: "/tool/cre-shots"
   },
   {
     title: "creArt",
     description: "Turn your artistic ideas into reality! Whether it's a painting, sculpture, or a digital masterpiece, we offer remote services to help bring your creations to life.",
     image: "/creart.jpg", // Adjust path accordingly
-    link: "/tool/ilocation-shooter"
+    link: "/tool/cre-art"
   },
   {
     title: "creBrand",
     description: "Elevate your brand effortlessly! From logo design to full-fledged brand strategies, our remote branding service ensures your business stands out—professionally, affordably, and always on time.",
     image: "/creBrand.jpg", // Adjust path accordingly
-    link: "/tool/ilocation-shooter"
+    link: "/tool/cre-brand"
   },
   {
     title: "cre3D",
     description: "Bring your 3D visions to life with our advanced 3D modeling and rendering services. From product designs to architectural visualizations, we create immersive and detailed 3D experiences—remotely and professionally.",
     image: "/cre3d.jpg", // Adjust path accordingly
-    link: "/tool/3d-factory"
+    link: "/tool/cre-3d"
   }
 
 ]

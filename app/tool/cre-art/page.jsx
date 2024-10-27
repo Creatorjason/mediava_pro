@@ -27,12 +27,12 @@ const stats = [
   { label: "Completed Edits", value: "6k" },
 ];
 const topEdits = [
-    { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/funnycats.jpg" },
-    { title: "Sleeping Dragon", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/sleepingdragon.jpg" },
-    { title: "How to build a startup", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/buildstartup.jpg" },
-    { title: "The art of problem solving", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/artsolve.jpg" },
-    { title: "HolySpirit, the Best", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/HolySpirit.jpg" },
-  ];
+  { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/funnycats.jpg" },
+  { title: "Sleeping Dragon", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/sleepingdragon.jpg" },
+  { title: "How to build a startup", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/buildstartup.jpg" },
+  { title: "The art of problem solving", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/artsolve.jpg" },
+  { title: "HolySpirit, the Best", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/HolySpirit.jpg" },
+];
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white flex overflow-y-auto lg:pb-0">
           {/* Sidebar for recent edits */}

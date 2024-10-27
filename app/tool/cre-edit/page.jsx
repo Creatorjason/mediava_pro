@@ -299,11 +299,11 @@ const stats = [
   { label: "Completed Edits", value: "6k" },
 ];
 const topEdits = [
-  { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
-  { title: "Sleeping Dragon", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
-  { title: "How to build a startup", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
-  { title: "The art of problem solving", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
-  { title: "HolySpirit, the Best", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/path/to/thumbnail.jpg" },
+  { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/funnycats.jpg" },
+  { title: "Sleeping Dragon", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/sleepingdragon.jpg" },
+  { title: "How to build a startup", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/buildstartup.jpg" },
+  { title: "The art of problem solving", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/artsolve.jpg" },
+  { title: "HolySpirit, the Best", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/HolySpirit.jpg" },
 ];
 
 export default function CreEditPage() {
@@ -348,8 +348,8 @@ export default function CreEditPage() {
         <div className="mt-8">
           <Tops edits={topEdits} />
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
       </main>
 
       {/* Bottom Navigation Bar only for mobile */}
