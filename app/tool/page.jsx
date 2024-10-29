@@ -57,8 +57,14 @@ const tools = [
     description: "Bring your 3D visions to life with our advanced 3D modeling and rendering services. From product designs to architectural visualizations, we create immersive and detailed 3D experiences—remotely and professionally.",
     image: "/cre3d.jpg", // Adjust path accordingly
     link: "/tool/cre-3d"
-  }
-
+  },
+  {
+    title: "creDev",
+    description: "Bring your 3D visions to life with our advanced 3D modeling and rendering services. From product designs to architectural visualizations, we create immersive and detailed 3D experiences—remotely and professionally.",
+    image: "/cre3d.jpg", // Adjust path accordingly
+    link: "/tool/cre-3d"
+  },
+  // create a functionality for users to link projects to each other
 ]
 
 const Page = () => {

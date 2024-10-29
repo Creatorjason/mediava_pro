@@ -377,7 +377,7 @@ export default function Component() {
       {/* Updated Hero Section */}
       <header className="relative h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="/background_mediava.jpg"
+          src="/background_new.jpg"
           alt="Mediava Background"
           layout="fill"
           objectFit="cover"
