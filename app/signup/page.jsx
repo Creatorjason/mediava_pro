@@ -62,10 +62,10 @@ const SignUp = () => {
             </button>
             <button
               type="button"
-              className={`px-4 py-2 rounded-full ${role === "creative" ? "bg-blue-500 text-white" : "bg-gray-700 text-gray-300"}`}
-              onClick={() => setRole("creative")}
+              className={`px-4 py-2 rounded-full ${role === "provider" ? "bg-blue-500 text-white" : "bg-gray-700 text-gray-300"}`}
+              onClick={() => setRole("provider")}
             >
-              Creative
+              Provider
             </button>
           </div>
 
@@ -174,7 +174,7 @@ const SignUp = () => {
           </div>
 
           {/* Portfolio section for Creatives */}
-          {role === "creative" && (
+          {role === "provider" && (
             <>
               <div className="mb-6">
                 <label className="block mb-2 font-bold">Portfolio Links</label>

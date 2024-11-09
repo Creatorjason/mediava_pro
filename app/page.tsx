@@ -417,40 +417,7 @@ export default function Component() {
       </header>
 
       {/* Services Section */}
-      <div className="container mx-auto px-4 py-16">
-        <section className="py-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">
-              Our Professional Services
-            </span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service: Service, index: number) => (
-              <div
-                key={index}
-                className="relative bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-103 hover:shadow-2xl"
-              >
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={400}
-                  height={200}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  {service.subservices && (
-                    <p className="text-sm text-cyan-400 mb-2">
-                      {service.subservices.join(", ")}
-                    </p>
-                  )}
-                  <p className="text-gray-300">{service.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+      
 
       {/* What We Do Section */}
       <div className="container mx-auto px-4 py-12">

@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faUser, faFire, faWallet, faClockRotateLeft, faObjectGroup, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser, faFire, faWallet, faClockRotateLeft, faObjectGroup, faEllipsisH, faChalkboard } from "@fortawesome/free-solid-svg-icons";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -9,6 +9,7 @@ const BottomNavBar = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [activeTab, setActiveTab] = useState("");
+  const [isMoreOpen, setIsMoreOpen] = useState(false); // State to toggle "More" dropdown
 
   const navItems = [
     { name: "Home", icon: faHome, path: "/" },
@@ -16,21 +17,26 @@ const BottomNavBar = () => {
     { name: "Projects", icon: faObjectGroup, path: "/dashboard" },
     { name: "Wallet", icon: faWallet, path: "/wallet" },
     {
-      name: "More", icon: faEllipsisH, path: "/more", subItems: [
+      name: "More", icon: faEllipsisH, path: "", subItems: [
         { name: "Revisit", icon: faClockRotateLeft, path: "/revisit" },
         { name: "Group", icon: faUser, path: "/profile" },
+        { name: "Learn", icon: faChalkboard, path: "/learn" },
       ]
     },
   ];
 
   useEffect(() => {
-    const currentRoute = pathname;
-    setActiveTab(currentRoute);
+    setActiveTab(pathname);
   }, [pathname]);
 
   const handleClick = (item) => {
-    setActiveTab(item.path); // Set activeTab directly to the item path
-    router.push(item.path);
+    if (item.name === "More") {
+      setIsMoreOpen(!isMoreOpen); // Toggle the "More" dropdown menu
+    } else {
+      setActiveTab(item.path);
+      router.push(item.path);
+      setIsMoreOpen(false); // Close "More" dropdown when navigating away
+    }
   };
 
   return (
@@ -43,13 +49,15 @@ const BottomNavBar = () => {
               className={`flex flex-col items-center p-2 ${activeTab === item.path
                 ? "text-cyan-500"
                 : "text-gray-400"
-              }`}
+                }`}
             >
               <FontAwesomeIcon icon={item.icon} className="text-2xl mb-1" />
               <span className="text-xs">{item.name}</span>
             </button>
-            {item.name === "More" && activeTab.startsWith("/more") && (
-              <ul className="absolute bottom-12 bg-gray-800 rounded-lg shadow-lg py-2 px-4">
+
+            {/* Display "More" subItems as a drop-up menu */}
+            {item.name === "More" && isMoreOpen && (
+              <ul className="absolute bottom-12 mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-lg shadow-lg py-2 px-4 z-10">
                 {item.subItems.map((subItem) => (
                   <li key={subItem.name} className="mb-2 last:mb-0">
                     <button

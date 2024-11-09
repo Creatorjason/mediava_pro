@@ -58,7 +58,7 @@ const WalletPage = () => {
               activeTab === "creative" ? "font-bold" : "text-gray-400"
             }`}
           >
-            Creative
+            Provider
           </button>
         </div>
       </div>
