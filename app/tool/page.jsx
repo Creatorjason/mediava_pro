@@ -35,7 +35,7 @@ const tools = [
     link: "/tool/cre-audio"
   },
   {
-    title: "creShots",
+    title: "creInShots",
     description: "Get studio-quality shots from anywhere. Our mobile photography and cinematography experts will help you capture every moment, as if you had a full production crew right at home.",
     image: "/creshots.jpg",
     link: "/tool/cre-shots"
@@ -61,33 +61,64 @@ const tools = [
   {
     title: "creDev",
     description: "Our expert developers are ready to bring your software projects to life, whether it’s web, mobile, or beyond. Your ideas, professionally coded and delivered on time.",
-    image: "/cre3d.jpg",
+    image: "/dev.jpg",
     link: "/tool/cre-dev"
   },
   {
     title: "creCatering",
-    description: "Our expert developers are ready to bring your software projects to life, whether it’s web, mobile, or beyond. Your ideas, professionally coded and delivered on time.",
-    image: "/cre3d.jpg",
-    link: "/tool/cre-dev"
+    description: "Indulge in seamless event catering with our gourmet service, tailored to bring exquisite dishes and a memorable dining experience to your table. From intimate gatherings to large events, we ensure top-notch presentation and flavors, delivered with elegance and precision.",
+    image: "/catering.jpg",
+    link: "/tool/cre-catering"
   },
   {
     title: "crePrint",
-    description: "Our expert developers are ready to bring your software projects to life, whether it’s web, mobile, or beyond. Your ideas, professionally coded and delivered on time.",
-    image: "/cre3d.jpg",
-    link: "/tool/cre-dev"
+    description: "Bring your designs to life with our professional printing service. From high-quality documents to specialized 3D prints, we offer precision and quality you can rely on to meet all your personal or business printing needs.",
+    image: "/print.jpg",
+    link: "/tool/cre-print"
   },
   {
     title: "creRegistration",
-    description: "Our expert developers are ready to bring your software projects to life, whether it’s web, mobile, or beyond. Your ideas, professionally coded and delivered on time.",
-    image: "/cre3d.jpg",
-    link: "/tool/cre-dev"
+    description: "Streamline your administrative tasks with creRegistration. We offer efficient, organized registration services to handle forms, documentation, and processes smoothly, ensuring professionalism and reliability for every requirement.",
+    image: "/reg.jpg",
+    link: "/tool/cre-registration"
   },
   {
-    title: "creTutors",
-    description: "Our expert developers are ready to bring your software projects to life, whether it’s web, mobile, or beyond. Your ideas, professionally coded and delivered on time.",
-    image: "/cre3d.jpg",
-    link: "/tool/cre-dev"
+    title: "creLaundry",
+    description: "Enjoy pristine, freshly laundered clothes with creLaundry. Our professional laundry service takes care of everything from washing to folding, providing quality and convenience, so you can focus on what matters most.",
+    image: "/laundry.jpg",
+    link: "/tool/cre-laundry"
   },
+  {
+    title: "creRepairs",
+    description: "When things break, creRepairs is here to help. Our skilled technicians offer repair services for electronics, household items, and more, ensuring everything works smoothly and is built to last.",
+    image: "/repairs.jpg",
+    link: "/tool/cre-repairs"
+  },
+  {
+    title: "creTailoring",
+    description: "Experience custom tailoring with creTailoring. Whether you need alterations or bespoke designs, our expert tailors bring your fashion ideas to life with precision, style, and perfect fits for every occasion.",
+    image: "/tailor.jpg",
+    link: "/tool/cre-tailoring"
+  },
+  {
+    title: "crePhotography",
+    description: "Capture every moment beautifully with crePhotography. Our professional photographers and advanced editing services bring out the best in your photos, whether for personal portraits, events, or commercial projects.",
+    image: "/photo.jpg",
+    link: "/tool/cre-photography"
+  },
+  {
+    title: "creEvents",
+    description: "Make your events unforgettable with creEvents. From planning to decor, we handle every detail to create a seamless, stylish, and enjoyable experience for your guests, tailored to your vision.",
+    image: "/events.jpg",
+    link: "/tool/cre-events"
+  },
+  {
+    title: "creGardens",
+    description: "Transform your outdoor space with creGardens. Our gardening and landscaping experts design and maintain beautiful gardens, bringing greenery, flowers, and tranquility to your environment.",
+    image: "/garden.jpg",
+    link: "/tool/cre-gardens"
+  },
+    
 ];
 
 const Page = () => {
