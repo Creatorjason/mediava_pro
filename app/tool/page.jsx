@@ -74,51 +74,108 @@ const tools = [
     title: "crePrint",
     description: "Bring your designs to life with our professional printing service. From high-quality documents to specialized 3D prints, we offer precision and quality you can rely on to meet all your personal or business printing needs.",
     image: "/print.jpg",
-    link: "/tool/cre-print"
+    link: "/tool/cre-print",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "creRegistration",
     description: "Streamline your administrative tasks with creRegistration. We offer efficient, organized registration services to handle forms, documentation, and processes smoothly, ensuring professionalism and reliability for every requirement.",
     image: "/reg.jpg",
-    link: "/tool/cre-registration"
+    link: "/tool/cre-registration",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "creLaundry",
     description: "Enjoy pristine, freshly laundered clothes with creLaundry. Our professional laundry service takes care of everything from washing to folding, providing quality and convenience, so you can focus on what matters most.",
     image: "/laundry.jpg",
-    link: "/tool/cre-laundry"
+    link: "/tool/cre-laundry",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "creRepairs",
     description: "When things break, creRepairs is here to help. Our skilled technicians offer repair services for electronics, household items, and more, ensuring everything works smoothly and is built to last.",
     image: "/repairs.jpg",
-    link: "/tool/cre-repairs"
+    link: "/tool/cre-repairs",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "creTailoring",
     description: "Experience custom tailoring with creTailoring. Whether you need alterations or bespoke designs, our expert tailors bring your fashion ideas to life with precision, style, and perfect fits for every occasion.",
     image: "/tailor.jpg",
-    link: "/tool/cre-tailoring"
+    link: "/tool/cre-tailoring",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "crePhotography",
     description: "Capture every moment beautifully with crePhotography. Our professional photographers and advanced editing services bring out the best in your photos, whether for personal portraits, events, or commercial projects.",
     image: "/photo.jpg",
-    link: "/tool/cre-photography"
+    link: "/tool/cre-photography",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "creEvents",
     description: "Make your events unforgettable with creEvents. From planning to decor, we handle every detail to create a seamless, stylish, and enjoyable experience for your guests, tailored to your vision.",
     image: "/events.jpg",
-    link: "/tool/cre-events"
+    link: "/tool/cre-events",
+    comingSoon: true // Add comingSoon property here
   },
   {
     title: "creGardens",
     description: "Transform your outdoor space with creGardens. Our gardening and landscaping experts design and maintain beautiful gardens, bringing greenery, flowers, and tranquility to your environment.",
     image: "/garden.jpg",
-    link: "/tool/cre-gardens"
+    link: "/tool/cre-gardens",
+    comingSoon: true // Add comingSoon property here
   },
-    
+  {
+    title: "creBeauty",
+    description: "Enhance your beauty with creBeauty. From skincare consultations to makeup artistry, our experts help you achieve your desired look in a luxurious, comfortable setting.",
+    image: "/beauty.jpg",
+    link: "/tool/cre-beauty",
+    comingSoon: true
+  },
+  {
+    title: "creRide",
+    description: "Get where you need to go with creRide. Our professional drivers offer safe, reliable, and comfortable transportation, whether for daily commutes or special events.",
+    image: "/ride.jpg",
+    link: "/tool/cre-ride",
+    comingSoon: true
+  },
+  {
+    title: "creDelivery",
+    description: "Deliver anything, anytime with creDelivery. Our fast and dependable delivery service ensures your packages arrive securely and on time, whether across town or nationwide.",
+    image: "/delivery.jpg",
+    link: "/tool/cre-delivery",
+    comingSoon: true
+  },
+  {
+    title: "creHealth",
+    description: "Take charge of your health with creHealth. Our healthcare professionals offer personalized wellness consultations, check-ups, and health monitoring to keep you at your best.",
+    image: "/health.jpg",
+    link: "/tool/cre-health",
+    comingSoon: true
+  },
+  {
+    title: "creApartments",
+    description: "Find your perfect living space with creApartments. We offer high-quality apartments with modern amenities, ideal for comfortable and stylish living in prime locations.",
+    image: "/apartments.jpg",
+    link: "/tool/cre-apartments",
+    comingSoon: true
+  },
+  {
+    title: "creSecurity",
+    description: "Protect your assets with creSecurity. Our professional security services provide you with peace of mind, offering trained personnel and top-notch safety solutions.",
+    image: "/securities.jpg",
+    link: "/tool/cre-security",
+    comingSoon: true
+  },
+  {
+    title: "creTutors",
+    description: "Achieve academic success with creTutors. Our skilled tutors provide personalized, effective lessons for students of all ages, helping you reach your educational goals.",
+    image: "/tutors.jpg",
+    link: "/tool/cre-tutors",
+    comingSoon: true
+  },
+  
 ];
 
 const Page = () => {
@@ -148,14 +205,21 @@ const Page = () => {
                   height={200}
                   className="w-full h-48 object-cover rounded-md"
                 />
+                {tool.comingSoon && (
+                  <span className="absolute top-2 right-2 bg-yellow-500 text-xs text-black font-bold px-2 py-1 rounded">
+                    Coming Soon
+                  </span>
+                )}
                 <div className="p-4 text-center">
                   <h3 className="text-xl md:text-2xl font-bold mb-2 text-fuchsia-400">{tool.title}</h3>
                   <p className="text-sm md:text-base text-gray-300 mb-4">{tool.description}</p>
                   <button
-                    onClick={() => router.push(tool.link)}
-                    className="px-4 w-full py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition"
+                    onClick={() => !tool.comingSoon && router.push(tool.link)}
+                    className={`px-4 w-full py-2 rounded-md ${tool.comingSoon ? 'bg-gray-500 cursor-not-allowed' : 'bg-cyan-500 hover:bg-cyan-600'
+                      } text-white transition`}
+                    disabled={tool.comingSoon}
                   >
-                    Use Service
+                    {tool.comingSoon ? "Coming Soon" : "Use Service"}
                   </button>
                 </div>
               </div>

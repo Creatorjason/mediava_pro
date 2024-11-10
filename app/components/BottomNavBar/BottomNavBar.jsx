@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faUser, faFire, faWallet, faClockRotateLeft, faObjectGroup, faEllipsisH, faChalkboard } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser, faFire, faWallet, faClockRotateLeft, faObjectGroup, faEllipsisH, faChalkboard, faUserGroup, faBroadcastTower, faGear } from "@fortawesome/free-solid-svg-icons";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -19,8 +19,11 @@ const BottomNavBar = () => {
     {
       name: "More", icon: faEllipsisH, path: "", subItems: [
         { name: "Revisit", icon: faClockRotateLeft, path: "/revisit" },
-        { name: "Group", icon: faUser, path: "/profile" },
+        { name: "Group", icon: faUserGroup, path: "/profile" },
         { name: "Learn", icon: faChalkboard, path: "/learn" },
+        { name: "Settings", icon: faGear, path: "/settings" },
+        {name : "API", icon: faBroadcastTower, path: "/api"},
+        {name: "Profile", icon: faUser, path: "/profile"}
       ]
     },
   ];

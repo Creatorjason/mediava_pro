@@ -147,7 +147,7 @@ const Dashboard = () => {
 
             {/* Completed Projects */}
             <div className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Completed Projects</h2>
+                <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">Completed Projects</h2>
                 {projects.completed.length > 0 ? (
                     projects.completed.map((project, index) => <ProjectCard key={index} project={project} onClick={handleProjectClick} />)
                 ) : (
@@ -157,7 +157,7 @@ const Dashboard = () => {
 
             {/* Ongoing Projects */}
             <div className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Ongoing Projects</h2>
+                <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">Ongoing Projects</h2>
                 {projects.ongoing.length > 0 ? (
                     projects.ongoing.map((project, index) => <ProjectCard key={index} project={project} onClick={handleProjectClick} />)
                 ) : (
@@ -167,7 +167,7 @@ const Dashboard = () => {
 
             {/* Not Started Projects */}
             <div className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Not Started Projects</h2>
+                <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">Not Started Projects</h2>
                 {projects.notStarted.length > 0 ? (
                     projects.notStarted.map((project, index) => <ProjectCard key={index} project={project} onClick={handleProjectClick} />)
                 ) : (
@@ -177,14 +177,16 @@ const Dashboard = () => {
 
             {/* Abandoned Projects */}
             <div>
-                <h2 className="text-3xl font-bold mb-6">Abandoned Projects</h2>
+                <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">Abandoned Projects</h2>
                 {projects.abandoned.length > 0 ? (
                     projects.abandoned.map((project, index) => <ProjectCard key={index} project={project} onClick={handleProjectClick} />)
                 ) : (
                     <EmptyStateCard category="abandoned" />
                 )}
             </div>
-
+            <br/>
+            <br/>
+            <br/>
             {/* Modal for showing project details */}
             {selectedProject && <Modal project={selectedProject} onClose={handleCloseModal} />}
             <BottomNavBar />

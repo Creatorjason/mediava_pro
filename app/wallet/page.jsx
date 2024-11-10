@@ -32,7 +32,7 @@ const WalletPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4">
-      <h1 className="text-center text-4xl font-bold py-6">
+      <h1 className="text-center text-4xl font-bold py-6 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">
         {activeTab === "user" ? "User Wallet" : "Creative Wallet"}
       </h1>
 
@@ -65,7 +65,7 @@ const WalletPage = () => {
 
       {/* Balance Section */}
       <div className="text-center mb-8">
-        <h2 className="text-xl font-bold">Balance:</h2>
+        <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">Balance:</h2>
         <p className="text-5xl font-bold text-cyan-500">{creativeBytes}</p>
 
         <div className="flex justify-center space-x-4 mt-4">
@@ -86,7 +86,7 @@ const WalletPage = () => {
 
       {/* Transaction History */}
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold mb-4">Transaction History</h2>
+        <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500">Transaction History</h2>
         <div className="space-y-4">
           {transactions.map((transaction, index) => (
             <div
