@@ -588,19 +588,19 @@ const styles = {
     fontSize: "6em", // Size for impact
     marginBottom: "20px",
     textAlign: "center",
-    background: "linear-gradient(90deg, #00d4ff, #e500ff)", // Neon gradient
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    fontWeight: "bold",
-    letterSpacing: "0.05em",
-    textShadow: `
-      0 0 5px #00d4ff,   /* Primary glow */
-      0 0 10px #00d4ff,  /* Secondary glow */
-      0 0 20px #00d4ff,  /* Tertiary glow for neon effect */
-      0 0 40px #e500ff,  /* Accent color glow */
-      0 0 60px #e500ff,  /* Further spread */
-      0 0 80px #e500ff   /* Even more spread */
-    `,
+    // background: "linear-gradient(90deg, #00d4ff, #e500ff)", // Neon gradient
+    // WebkitBackgroundClip: "text",
+    // WebkitTextFillColor: "transparent",
+    // fontWeight: "bold",
+    // letterSpacing: "0.05em",
+    // textShadow: `
+    //   0 0 5px #00d4ff,   /* Primary glow */
+    //   0 0 10px #00d4ff,  /* Secondary glow */
+    //   0 0 20px #00d4ff,  /* Tertiary glow for neon effect */
+    //   0 0 40px #e500ff,  /* Accent color glow */
+    //   0 0 60px #e500ff,  /* Further spread */
+    //   0 0 80px #e500ff   /* Even more spread */
+    // `,
   },
   tagline: {
     fontSize: "1.5em", // Increase font size for tagline
