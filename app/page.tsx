@@ -585,7 +585,7 @@ const styles = {
     zIndex: -1,
   },
   title: {
-    fontSize: "6em", // Size for impact
+    fontSize: "4em", // Size for impact
     marginBottom: "20px",
     textAlign: "center",
     // background: "linear-gradient(90deg, #00d4ff, #e500ff)", // Neon gradient
