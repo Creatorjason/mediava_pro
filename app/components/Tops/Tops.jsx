@@ -1,12 +1,15 @@
 import Image from "next/image";
 
-const Tops = ({ edits }) => (
+const Tops = ({ edits, header }) => (
   <section className="py-4">
-    <h2 className="text-2xl font-semibold mb-4">Top Edits</h2>
+    <h2 className="text-2xl font-semibold mb-4">{header}</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {edits.map((edit, index) => (
-        <div
+        <a
           key={index}
+          href={edit.url}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition"
         >
           <Image
@@ -25,7 +28,7 @@ const Tops = ({ edits }) => (
               {edit.views} views • {edit.timeAgo}
             </p>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </section>

@@ -3,14 +3,14 @@ import { useState } from "react";
 
 const EditForm = ({
   title = "Edit Form",
-  showVideoUpload = true,
+  showVideoUpload = false,
   showDescription = true,
   showVoiceNote = true,
   showCategoryDropdown = false,
   categoryOptions = [],
   showCheckboxOptions = false,
   checkboxOptions = [],
-  showUrgencyDropdown = true,
+  showUrgencyDropdown = false,
   urgencyLevels = ["Normal", "High", "Urgent"],
   buttonText = "Submit",
 }) => {

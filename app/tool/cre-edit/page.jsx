@@ -285,6 +285,7 @@ import Sidebar from "@/app/components/Sidebar/Sidebar";
 import EditForm from "@/app/components/EditForm/EditForm";
 import Tops from "@/app/components/Tops/Tops";
 
+
 // Placeholder data
 const recentEdits = [
   "I want to edit a video for cats",
@@ -299,7 +300,7 @@ const stats = [
   { label: "Completed Edits", value: "6k" },
 ];
 const topEdits = [
-  { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/funnycats.jpg" },
+  { title: "Funny Cats", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/funnycats.jpg", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
   { title: "Sleeping Dragon", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/sleepingdragon.jpg" },
   { title: "How to build a startup", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/buildstartup.jpg" },
   { title: "The art of problem solving", timeTaken: "10 mins", by: "Creplanos", views: "7.9K", timeAgo: "1 day ago", thumbnail: "/artsolve.jpg" },
@@ -346,7 +347,9 @@ export default function CreEditPage() {
 
         {/* Top Edits Section */}
         <div className="mt-8">
-          <Tops edits={topEdits} />
+          <Tops
+          header={"Top Edits"} 
+          edits={topEdits} />
         </div>
         <br />
         <br />

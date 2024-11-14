@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faUser, faFire, faWallet, faClockRotateLeft, faObjectGroup, faEllipsisH, faChalkboard, faUserGroup, faBroadcastTower, faGear } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser, faFire, faWallet, faClockRotateLeft, faObjectGroup, faEllipsisH, faChalkboard, faUserGroup, faBroadcastTower, faGear, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -21,9 +21,10 @@ const BottomNavBar = () => {
         { name: "Revisit", icon: faClockRotateLeft, path: "/revisit" },
         { name: "Group", icon: faUserGroup, path: "/profile" },
         { name: "Learn", icon: faChalkboard, path: "/learn" },
-        { name: "Settings", icon: faGear, path: "/settings" },
         {name : "API", icon: faBroadcastTower, path: "/api"},
-        {name: "Profile", icon: faUser, path: "/profile"}
+        {name: "Profile", icon: faUser, path: "/profile"},
+        {name: "Ringer", icon: faVolumeHigh, path: "/ringer"},
+        { name: "Settings", icon: faGear, path: "/settings" },
       ]
     },
   ];
@@ -60,7 +61,7 @@ const BottomNavBar = () => {
 
             {/* Display "More" subItems as a drop-up menu */}
             {item.name === "More" && isMoreOpen && (
-              <ul className="absolute bottom-12 mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-lg shadow-lg py-2 px-4 z-10">
+              <ul className="absolute bottom-12 mb-2 left-1 transform -translate-x-1/2 bg-gray-800 rounded-lg shadow-lg py-2 px-8 z-10">
                 {item.subItems.map((subItem) => (
                   <li key={subItem.name} className="mb-2 last:mb-0">
                     <button
