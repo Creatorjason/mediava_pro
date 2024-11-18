@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const EditForm = ({
-  title = "Edit Form",
+  title = "Service Form",
   showVideoUpload = false,
   showDescription = true,
   showVoiceNote = true,

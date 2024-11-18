@@ -13,18 +13,18 @@ const BottomNavBar = () => {
 
   const navItems = [
     { name: "Home", icon: faHome, path: "/" },
-    { name: "Services", icon: faFire, path: "/tool" },
+    { name: "Services", icon: faFire, path: "/services" },
     { name: "Projects", icon: faObjectGroup, path: "/dashboard" },
     { name: "Wallet", icon: faWallet, path: "/wallet" },
     {
       name: "More", icon: faEllipsisH, path: "", subItems: [
         { name: "Revisit", icon: faClockRotateLeft, path: "/revisit" },
-        { name: "Group", icon: faUserGroup, path: "/profile" },
+        { name: "Group", icon: faUserGroup, path: "/group" },
+        {name: "Ringer", icon: faVolumeHigh, path: "/ringer"},
         { name: "Learn", icon: faChalkboard, path: "/learn" },
         {name : "API", icon: faBroadcastTower, path: "/api"},
-        {name: "Profile", icon: faUser, path: "/profile"},
-        {name: "Ringer", icon: faVolumeHigh, path: "/ringer"},
-        { name: "Settings", icon: faGear, path: "/settings" },
+        // {name: "Profile", icon: faUser, path: "/profile"},
+        // { name: "Settings", icon: faGear, path: "/settings" },
       ]
     },
   ];
